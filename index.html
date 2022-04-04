@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/light.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <header>
+        <div id="check-theme">
+            Select Theme:
+            <form>
+                <input type="radio" id="dark" name="theme" value="dark" >
+                <label for="dark">Dark</label><br>
+                <input type="radio" id="light" name="theme" value="light" checked>
+                <label for="light">Light</label>
+            </form>
+        </div>
+        <h1 id="title"></h1>
+    </header>
+    <main>
+        <nav>
+            <h2>Categories</h2>
+            <div id="links">
+            </div>
+        <div id="search">
+            <form>
+                <h3>Custom Search</h3>
+                <input type="text" class="search-input" id="search-input" placeholder="Enter Search">
+                <button class="search-button" id="search-custom-button">Search</button>
+            </form>
+            <form>
+                <h3>Search By Make</h3>
+                <input type="text" class="search-input" id="search-make-input" placeholder="Enter Make">
+                <button class="search-button" id="search-make-button">Search</button>
+            </form>
+        </div>
+        </nav>
+        <div id="thumb-view">
+            <div id="thumbnails"></div>
+        </div>
+        <div id="recent-view">
+            <h2>Recent</h2>
+            <div id="recent"></div>
+        </div>
+    </main>
+    <footer>
+        Matthew Reid
+    </footer>
+    <div id="modal-container">
+        <span id="modal-close">&times;</span>
+        <img id="modal-content">
+        <div id="modal-caption"></div>
+    </div>
+</body>
+</html>
