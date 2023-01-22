@@ -44,7 +44,7 @@ $(function(){
 function checkTheme(){
     let selected = $("input[name='theme']:checked").val();
     if (selected == "dark") {
-        $("link").attr("href", "css/dark.css");
+        $("link").attr("href", "css/dark_backup.css");
     }else if (selected == "light") {
         $("link").attr("href", "css/light.css");
     }
