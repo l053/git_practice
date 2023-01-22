@@ -1,131 +1,3 @@
-/*
-html{
-    background: white;
-    border: black;
-    color: black;
-}
-input{
-    color: black;
-}
-#modal-container{
-    display: none;
-    padding-top: 1%;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 1;
-}
-#modal-content{
-    margin: 0px auto;
-    display: block;
-}
-#modal-caption{
-    text-align: center;
-    background: white;
-    margin: auto;
-    font-size: 25px;
-    padding: 10px 0px 10px 0px;
-}
-#modal-close{
-    font-size: 50px;
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    color: white;
-    font-weight: bold;
-}
-#modal-close:hover{
-    transform: scale(1.5);
-    cursor: pointer; 
-}
-li{
-    font-weight: 900;
-    list-style-type: none;
-    padding: 10px 0px;
-}
-header{
-    background: rgb(120,120,120);
-}
-header h1{
-    color: black;
-}
-main{
-    min-width: 200px;
-    background: white;
-}
-nav{
-    background: rgb(90,90,90);
-}
-#links{
-    background: rgb(120,120,120);
-    color: black;
-}
-div#search {
-    margin: 10px;
-}
-.search-input {
-    margin-left: 10px;
-    border: 2px solid black;
-    background: rgb(200,200,200);
-}
-.search-button {
-    margin-left: 10px;
-    background: rgb(130,130,130);
-    border: 2px solid black;
-    border-radius: 15%;
-    color: black;
-    cursor: pointer;
-}
-#check-theme{
-    font-weight: 900;
-    font-size: larger;
-    color: black;
-    position: absolute;
-    padding: 0px 10px;
-}
-#thumb-view h2 {
-    background: rgb(100,100,100);
-    border-style: solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    margin: 0px 0px 10px;
-}
-#thumbnails{
-    background: rgb(120,120,120);
-    border-style: solid;
-}
-#recent-view{
-    background: rgb(100,100,100);
-}
-#recent-view figure{
-    border: 1px solid black;
-}
-figure{
-    background: rgb(255,255,255);
-    margin: 10px;
-}
-figure:hover{
-    position: relative;
-    bottom: 10px;
-    box-shadow: 10px 10px 5px black;
-}
-footer {
-    margin: 10px 0px 0px 0px;
-    color: black;
-    background-color: white;
-    text-align: left;
-    position: fixed;
-    bottom: 0px;
-    left: 5px;
-    right: 5px;
-}
-*/
-
-/*-------------------------------------*/
 
 /*------------Modal---------*/
 
@@ -163,7 +35,7 @@ footer {
     transform: scale(1.5);
     cursor: pointer; 
 }
-
+/*---------Mobile-------------------------*/
 @media all and (max-width: 768px){
 
     /*-----------Header--------*/
@@ -232,6 +104,8 @@ footer {
     figure{
         font-size: 12px;
         text-align: center;
+        margin: 5px;
+        padding: 5px;
     }
     #thumbnails img {
         width: 150px;
@@ -255,32 +129,39 @@ footer {
     }
 }
 
-/*-------------------------------------*/
+/*-------------------Tablet------------------*/
 
 @media all and (min-width: 768px){
+    
     header {
+        display: flex;
         border-style: solid;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        margin: 5px;
+        padding: 5px;
         text-align: center;
-        margin: 10px 0px 10px 0px;
     }
-    header h1{
+    
+    #check-theme{
+        flex-grow: 1;
+        margin: 5px;
+        padding: 5px;
+    }
+    #title{
+        flex-grow: 4;
         font-size: 70px;
-        margin: 0px;
+        margin: 5px;
+        padding: 5px;
     }
+    
     main{
         display: flex;
         position: relative;
-        height: auto;
     }
     nav{
         position: relative;
-        top: 180px;
+        top: 200px;
         width: 260px;
         border-style: solid;
-        margin-right: 10px;
-        height: fit-content;
     }
     nav h3{
         text-align: center;
@@ -299,14 +180,26 @@ footer {
     }
     #links{
         border-bottom-style: solid;
-        padding: 20px 0px 0px 20px;
+        text-align: left;
+        margin: 5px;
+        padding: 5px;
     }
     li:hover{
         cursor: pointer;
         position: relative;
         left: 20px;
         transform: scale(1.2);
-        color: white;
+        color: blueviolet;
+    }
+    #search-bar{
+        flex-direction: column;
+    }
+    #search-block{
+        text-align: center;
+    }
+    button{
+        margin: 5px;
+        padding: 5px;
     }
     #thumb-view{
         display: block;
@@ -320,18 +213,20 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background: rgb(120,120,120);
+        background: rgb(255, 255, 255);
+        position: absolute;
+        top: 180px;
+        left: 270px;
     }
     #recent-view h2{
         display: block;
         text-align: center;
-        padding: 0px 0px 0px 0px;
-        margin: 10px 0px 10px 0px;
+        padding: 5px;
+        margin: 5px;
     }
     #recent-view{
         left: 0px;
         right: 0px;
-        height: 160px;
         position: absolute;
         text-align: center;
         border-style: solid;
@@ -344,10 +239,10 @@ footer {
         justify-content: center;
     }
     #recent figcaption{
-        display: none;
+        display: block;
     }
-    #recent-view figure{
-        border: 1px solid black;
+    figure{
+        margin: 5px;
         padding: 5px;
     }
     #recent-view img{
@@ -355,33 +250,24 @@ footer {
         height: 75px;
     }
     figure img{
-        width: 200px;
         height: 200px;
     }
 
     figcaption{
         text-align: center;
     }
-    #thumbnails > figure{
-        font-size: 12px;
-        border: 1px solid black;
-        padding: 30px;
-        text-align: center;
-        width: 220px;
-        height: 220px;
-        overflow:hidden;
+    footer{
+        position: fixed;
+        bottom: 1%;
     }
 }
 
-/*-------------------------------------*/
+/*------------------Desktop-------------------*/
 
 @media all and (min-width: 1024px){
     header {
         border-style: solid;
-        padding-top: 10px;
-        padding-bottom: 10px;
         text-align: center;
-        margin: 10px 0px 10px 0px;
     }
     main{
         display: flex;
@@ -389,13 +275,9 @@ footer {
         height: auto;
     }
     nav{
-        position: relative;
-        top: 0px;
-        min-width: 300px;
-        max-width: 300px;
+        position: initial;
+        width: 260px;
         border-style: solid;
-        margin-right: 10px;
-        height: fit-content;
     }
     nav h3{
         text-align: center;
@@ -432,16 +314,13 @@ footer {
         height: fit-content;
     }
     #thumbnails{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        
+        top: 200px;
     }
     #recent-view{
         position: relative;
-        flex: 0.5;
         margin-left: 10px;
         height: fit-content;
+        width: -webkit-fill-available;
     }
     #recent {
         display: flex;
@@ -464,12 +343,6 @@ footer {
         text-align: center;
     }
     #thumbnails figure{
-        font-size: 12px;
-        border: 1px solid black;
-        padding: 30px;
         text-align: center;
-        width: 220px;
-        height: 220px;
-        overflow: hidden;
     }
 }
