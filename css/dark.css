@@ -1,4 +1,45 @@
-
+html{
+    background: black;
+    border: white;
+    color: white;
+}
+input{
+    color: white;
+}
+header{
+    background: rgb(60,60,60);
+}
+main{
+    min-width: 200px;
+    background: black;
+}
+nav{
+    background: rgb(30,30,30);
+}
+#links{
+    background: rgb(90,90,90);
+    color: white;
+}
+#thumb-view h2 {
+    background: rgb(30,30,30);
+}
+#thumbnails{
+    background: rgb(30,30,30);
+}
+#recent-view{
+    background: rgb(30,30,30);
+}
+#recent-view figure{
+    border: 1px solid white;
+}
+figure{
+    background: black;
+}
+figure:hover{
+    position: relative;
+    bottom: 10px;
+    box-shadow: 10px 10px 5px white;
+}
 /*------------Modal---------*/
 
 #modal-container{
@@ -18,7 +59,7 @@
 }
 #modal-caption{
     text-align: center;
-    background: white;
+    background: black;
     margin: auto;
     font-size: 25px;
     padding: 10px 0px 10px 0px;
@@ -213,7 +254,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background: rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
         position: absolute;
         top: 180px;
         left: 270px;
