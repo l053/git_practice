@@ -76,6 +76,10 @@ figure:hover{
     transform: scale(1.5);
     cursor: pointer; 
 }
+/*---------Global-------*/
+img {
+    cursor: grab;
+}
 /*---------Mobile-------------------------*/
 @media all and (max-width: 768px){
 
