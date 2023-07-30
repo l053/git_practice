@@ -9,30 +9,37 @@ let recent = [];
 let nrequests = 0;
 let nreceived = 0;
 let links = [];
-//let links = ["nissan", "lamborghini", "ferrari", "bugatti", "maserati", "dodge viper"];
 
 //Get document ready
 $(function(){
     let startUp = searchReq + BRAND;
     $("title").html(BRAND);
     $("#title").html(BRAND);
+    
+
     //Get all the initial images to display
     $.get(startUp, function(data){
         fetchPhoto(data);
     });
+    
     //Adds all the subcategory links to the page
     addLinks();
+
+    
     //Check for theme option changes
     $("#check-theme").change(checkTheme);
     //Modal close on click
     $("#modal-close").click(function(){
         $("#modal-container").css("display", "none");
     });
+    
     //Search for custom input
     $("#search-custom-button").click(searchCustomHandler);
     //Search for make input
     $("#search-make-button").click(searchMakeHandler);
+    
 });
+
 //Check which theme is selected and change css file
 function checkTheme(){
     let selected = $("input[name='theme']:checked").val();
@@ -81,6 +88,7 @@ function addLinks(){
         });
     });
 }
+
 //Add links function left here because newer function sometimes takes awhile to return results and display the links
 /*
 //Add all the links to subcategories
@@ -104,6 +112,7 @@ function addLinks(){
     });
 }
 */
+
 //Collect ids and titles for images
 function fetchPhoto(data){
     nrequests = data.photos.photo.length;
@@ -113,6 +122,7 @@ function fetchPhoto(data){
         getSizes(photoObj);
     }
 }
+
 //Gets the images sizes for thumbnail, recent, full
 function getSizes(photoObj){
     let searchReq = getSizesReq + photoObj.id;
@@ -159,6 +169,7 @@ function getSizes(photoObj){
         }
     });
 }
+
 //Display images
 function display(data){
     let thumbnailStr;
@@ -171,7 +182,7 @@ function display(data){
                 img-thumb="${data[i].thumb}"
                 img-title="${data[i].title}">
                 <img src="${data[i].thumb}">
-                <figcaption>${data[i].title}</figcaption>
+                <figcaption>${data[i].title.substring(0,27)}</figcaption>
             </figure>`;
         $("#thumbnails").append(thumbnailStr);
     }
@@ -190,6 +201,7 @@ function display(data){
         });
     });
 }
+
 //Set the scale of the image depending on landscape or portrait view
 function setImgScale(size){
     let thisWidth = size.x;
@@ -211,6 +223,7 @@ function setImgScale(size){
         $("#modal-caption").css("max-width", thisWidth);
     }
 }
+
 //Add images to recent list
 function addRecent(recentObj){
     if(recent.length > 0){
@@ -264,13 +277,14 @@ function addRecent(recentObj){
         });
     });
 }
+
 //Get all details about the image and determine size of image
 function getMeta(obj){
     let id = obj[0].attributes["img-id"].value;
     let full = obj[0].attributes["img-full"].value;
     let recent = obj[0].attributes["img-recent"].value;
     let thumb = obj[0].attributes["img-thumb"].value;
-    let title = obj[0].attributes["img-title"].value;
+    let title = obj[0].attributes["img-title"].value.substring(0,15);
 
     var img = new Image();
     //Get size value when image loads
@@ -284,9 +298,12 @@ function getMeta(obj){
     });
     img.src = full;
 }
+
 //Search for custom input
 function searchCustomHandler(){
     let searchVal = $("#search-input").val();
+    console.log(searchVal);
+    
     $("#search-input").val("");
     let search = searchReq + searchVal;
     $.get(search, function(data){
@@ -295,9 +312,12 @@ function searchCustomHandler(){
         fetchPhoto(data);
     });
 }
+
 //Search for make input
 function searchMakeHandler(){
     let searchVal = $("#search-make-input").val();
+    console.log(searchVal);
+    
     $("#search-make-input").val("");
     searchVal = searchVal.charAt(0).toUpperCase() + searchVal.substring(1);
     BRAND = searchVal;
@@ -305,4 +325,5 @@ function searchMakeHandler(){
     $("title").html(searchVal);
     $("#title").html(searchVal);
     addLinks();
+    
 }

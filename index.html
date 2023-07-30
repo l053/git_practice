@@ -10,8 +10,9 @@
 <body>
     <header>
         <div id="check-theme">
-            Select Theme:
             <form>
+                Select Theme:
+                <br>
                 <input type="radio" id="dark" name="theme" value="dark" >
                 <label for="dark">Dark</label><br>
                 <input type="radio" id="light" name="theme" value="light" checked>
@@ -22,37 +23,38 @@
     </header>
     <main>
         <nav>
-            <h2>Categories</h2>
-            <div id="links">
+            <h2 id="sub-title">Categories</h2>
+            <div id="links"></div>
+            <div id="search-bar">
+                <div id="search-block">
+                    <h3 id="sub-title">Search By Make</h3>
+                    <p>Search a brand of car to see some models of that brand.</p>
+                    <input type="text" class="search-input" id="search-make-input" placeholder="Enter Make">
+                    <br>
+                    <button class="search-button" id="search-make-button">Search</button>
+                </div>
+                <div id="search-block">
+                    <h3 id="sub-title">Custom Search</h3>
+                    <p>Search for anything at all using flickr api.</p>
+                    <input type="text" class="search-input" id="search-input" placeholder="Enter Search">
+                    <br>
+                    <button class="search-button" id="search-custom-button">Search</button>
+                </div>
             </div>
-        <div id="search">
-            <form>
-                <h3>Custom Search</h3>
-                <input type="text" class="search-input" id="search-input" placeholder="Enter Search">
-                <button class="search-button" id="search-custom-button">Search</button>
-            </form>
-            <form>
-                <h3>Search By Make</h3>
-                <input type="text" class="search-input" id="search-make-input" placeholder="Enter Make">
-                <button class="search-button" id="search-make-button">Search</button>
-            </form>
-        </div>
         </nav>
-        <div id="thumb-view">
-            <div id="thumbnails"></div>
-        </div>
+        <div id="thumbnails"></div>
         <div id="recent-view">
-            <h2>Recent</h2>
+            <h2 id="sub-title">Recent</h2>
             <div id="recent"></div>
         </div>
     </main>
-    <footer>
-        Matthew Reid
-    </footer>
     <div id="modal-container">
         <span id="modal-close">&times;</span>
         <img id="modal-content">
         <div id="modal-caption"></div>
     </div>
+    <footer>
+        Matthew Reid
+    </footer>
 </body>
 </html>
