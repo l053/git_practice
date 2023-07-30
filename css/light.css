@@ -35,6 +35,9 @@
     transform: scale(1.5);
     cursor: pointer; 
 }
+img:hover{
+    cursor: pointer;
+}
 /*---------Mobile-------------------------*/
 @media all and (max-width: 768px){
 
