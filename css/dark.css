@@ -80,8 +80,8 @@ img:hover{
     cursor: pointer; 
 }
 /*---------Global-------*/
-img {
-    cursor: grab;
+img:hover{
+    cursor: pointer;
 }
 /*---------Mobile-------------------------*/
 @media all and (max-width: 768px){
