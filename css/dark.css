@@ -1,3 +1,7 @@
+
+img:hover{
+    cursor: pointer;
+}
 html{
     background: black;
     border: white;
