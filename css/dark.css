@@ -120,6 +120,9 @@ footer {
     left: 5px;
     right: 5px;
 }
+img:hover{
+    cursor: pointer;
+}
 
 @media all and (max-width: 768px){
     form{
